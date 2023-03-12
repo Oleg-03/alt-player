@@ -4,15 +4,14 @@ SOURCES += \
         main.cpp \
         theme.cpp
 
-resources.files = main.qml 
-resources.prefix = /$${TARGET}
-RESOURCES += resources \
-    conf.qrc
+RESOURCES += \
+    resurces.qrc
 
 TRANSLATIONS += \
     alt-player_uk_UA.ts
-CONFIG += lrelease
-CONFIG += embed_translations
+CONFIG += \
+        lrelease \
+        embed_translations
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -27,3 +26,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     theme.h
+
+DISTFILES += \
+    main.qml \
+    PlayPauseButton.qml

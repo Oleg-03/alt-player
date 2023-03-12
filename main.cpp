@@ -2,6 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <QLocale>
 #include <QTranslator>
+#include <QQmlContext>
+
+#include "theme.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +21,10 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/alt-player/main.qml"_qs);
+
+    engine.rootContext()->setContextProperty("themeColor", Theme(":/themes/themes/dark-purple.json").getColors());
+
+    const QUrl url(u"qrc:/main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

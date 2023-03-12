@@ -1,8 +1,23 @@
 import QtQuick
+import QtQuick.Controls
 
-Window {
-    width: 640
-    height: 480
+Window
+{
+    width: 412
+    height: 817
     visible: true
-    title: qsTr("Hello World")
+
+    color: themeColor.surface
+
+    PlayPauseButton
+    {
+        anchors.centerIn: parent
+
+        onClicked:
+        {
+            console.log(checked)
+        }
+    }
+
+
 }

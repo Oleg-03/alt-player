@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/themes">
+        <file>themes/dark-purple.json</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>PlayPauseButton.qml</file>
+    </qresource>
+</RCC>
