@@ -28,6 +28,22 @@ Button
     height: parent.height
     width: parent.width / 3
 
+    background: Rectangle
+    {
+        color: "transparent"
+    }
+
+    Rectangle
+    {
+        id: iconBackground
+        color: themeColor.secondary_container
+        width: 64
+        height: 32
+        radius: 16
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -14
+    }
+
     Image
     {
         width: itemSize
@@ -45,17 +61,6 @@ Button
             case "settings":  return iconSettings
             }
         }
-    }
-
-    background: Rectangle
-    {
-        id: iconBackground
-        color: themeColor.secondary_container
-        width: 64
-        height: 32
-        radius: 16
-        anchors.centerIn: parent
-        anchors.verticalCenterOffset: -14
     }
 
     Text

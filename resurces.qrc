@@ -14,5 +14,8 @@
         <file>MiniSongCover.qml</file>
         <file>NavBar.qml</file>
         <file>NavBarButton.qml</file>
+        <file>ScreenPlayer.qml</file>
+        <file>ScreenPlaylists.qml</file>
+        <file>ScreenSettings.qml</file>
     </qresource>
 </RCC>
