@@ -2,7 +2,7 @@
 
 PlaylistDb::PlaylistDb()
 {
-    this->path = "..\\alt-player\\databases\\database.db";
+
 }
 
 PlaylistDb::~PlaylistDb()
@@ -10,26 +10,20 @@ PlaylistDb::~PlaylistDb()
     delete this->query;
 }
 
-bool PlaylistDb::open()
+QSqlDatabase PlaylistDb::open()
 {
-    return db.open();
+    QSqlDatabase& db = Database::getDBInstance();
+    return db;
 }
 
 void PlaylistDb::close()
 {
-    db.close();
-}
-
-void PlaylistDb::connection()
-{
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(path);
+    Database::disconnect();
 }
 
 void PlaylistDb::addPlaylistDB(Playlist child_playlist)
 {
-    connection();
-    db.open();
+    open();
     query = new QSqlQuery();
 
     query->prepare(R"(
@@ -53,13 +47,12 @@ void PlaylistDb::addPlaylistDB(Playlist child_playlist)
 
     query->exec();
 
-    db.close();
+    close();
 }
 
 void PlaylistDb::addPlaylistInPlaylistDb(int parent_id)
 {
-    connection();
-    db.open();
+    open();
     query = new QSqlQuery();
 
     query->prepare(R"(
@@ -79,7 +72,7 @@ void PlaylistDb::addPlaylistInPlaylistDb(int parent_id)
     query->bindValue(":p", parent_id);
 
     query->exec();
-    db.close();
+    close();
 }
 
 void PlaylistDb::addPlaylistInPlaylist(int parent_id, Playlist child_playlist)
@@ -100,8 +93,7 @@ void PlaylistDb::addPlaylistInPlaylist(int parent_id, Playlist child_playlist)
 
 void PlaylistDb::addTrackDb(Track child_track)
 {
-    connection();
-    db.open();
+    open();
     query = new QSqlQuery();
 
     query->prepare(R"(
@@ -119,13 +111,12 @@ void PlaylistDb::addTrackDb(Track child_track)
     query->bindValue(":p", child_track.getPath());
 
     query->exec();
-    db.close();
+    close();
 }
 
 void PlaylistDb::addTrackInPlaylistDb(int parent_id)
 {
-    connection();
-    db.open();
+    open();
     query = new QSqlQuery();
 
     query->prepare(R"(
@@ -144,7 +135,7 @@ void PlaylistDb::addTrackInPlaylistDb(int parent_id)
 
     query->bindValue(":p", parent_id);
     query->exec();
-    db.close();
+    close();
 }
 
 void PlaylistDb::addTrackInPlaylist(int parent_id, Track child_track)

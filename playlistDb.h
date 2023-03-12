@@ -1,7 +1,6 @@
 #ifndef PLAYLISTDB_H
 #define PLAYLISTDB_H
 
-#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QList>
 #include <QString>
@@ -12,17 +11,14 @@ class PlaylistDb
 {
     private:
         QList<Playlist> playlists;
-        QString path;
-        QSqlDatabase db;
         QSqlQuery *query;
 //        bool loadPlaylists();
 //        bool loadTrackes();
 //        bool loadTags();
 //        bool loadPlaylistsInPlaylists();
 //        bool loadTrackesInPlaylists();
-        bool open();
+        QSqlDatabase open();
         void close();
-        void connection();
         void addPlaylistDB(Playlist);
         void addPlaylistInPlaylistDb(int);
         void addTrackDb(Track);

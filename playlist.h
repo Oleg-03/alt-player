@@ -5,6 +5,7 @@
 #include <QList>
 
 #include "track.h"
+#include "database.h"
 
 class Playlist
 {
