@@ -1,7 +1,7 @@
 QT += quick sql core
 
 SOURCES += \
-        main.cpp
+        theme.cpp
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
@@ -23,3 +23,6 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    theme.h
