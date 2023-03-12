@@ -3,7 +3,14 @@
         <file>themes/dark-purple.json</file>
     </qresource>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>SongCover.qml</file>
         <file>PlayPauseButton.qml</file>
+        <file>main.qml</file>
+        <file>ShuffleButton.qml</file>
+        <file>RepeatButton.qml</file>
+        <file>NextSongButton.qml</file>
+        <file>PrevSongButton.qml</file>
+        <file>MiniPlayPauseButton.qml</file>
+        <file>MiniSongCover.qml</file>
     </qresource>
 </RCC>

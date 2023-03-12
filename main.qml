@@ -9,15 +9,4 @@ Window
 
     color: themeColor.surface
 
-    PlayPauseButton
-    {
-        anchors.centerIn: parent
-
-        onClicked:
-        {
-            console.log(checked)
-        }
-    }
-
-
 }

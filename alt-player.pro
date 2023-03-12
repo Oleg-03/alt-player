@@ -1,8 +1,8 @@
 QT += quick sql core
 
 SOURCES += \
-        main.cpp \
-        theme.cpp
+    main.cpp \
+    theme.cpp
 
 RESOURCES += \
     resurces.qrc
@@ -10,8 +10,8 @@ RESOURCES += \
 TRANSLATIONS += \
     alt-player_uk_UA.ts
 CONFIG += \
-        lrelease \
-        embed_translations
+    lrelease \
+    embed_translations
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -26,7 +26,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     theme.h
-
-DISTFILES += \
-    main.qml \
-    PlayPauseButton.qml

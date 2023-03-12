@@ -3,42 +3,37 @@ import QtQuick.Controls
 
 RoundButton
 {
-    readonly property var icon_played:
+    readonly property string iconPlayed:
     {
         var svg = "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"%1\" height=\"48\" width=\"48\"><path d=\"M16 37.85v-28l22 14Z\"/></svg>"
         return svg.arg(themeColor.surface)
     }
 
-    readonly property url icon_paused:
+    readonly property string iconPaused:
     {
         var svg = "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"%1\" height=\"48\" width=\"48\"><path d=\"M28.25 38V10H36v28ZM12 38V10h7.75v28Z\"/></svg>"
         return svg.arg(themeColor.surface)
     }
 
-    property int round: 18
-    property int buttonSize: 60
-
+    property int itemSize: 60
 
     id: roundButton
 
-    height: buttonSize
-    width: buttonSize
+    height: itemSize
+    width: itemSize
 
-    radius: round
+    radius: 18
 
     state: "paused"
 
-    checkable: true
-    checked: false
-
-    icon.width: buttonSize / 1.75
-    icon.height: buttonSize / 1.75
+    icon.width: itemSize / 1.75
+    icon.height: itemSize / 1.75
 
     background: Rectangle
     {
         anchors.fill: parent
         color: themeColor.primary
-        radius: parent.round
+        radius: parent.radius
     }
 
     states:
@@ -46,24 +41,25 @@ RoundButton
         State
         {
             name: "played"
-            PropertyChanges {
+            PropertyChanges
+            {
                 target: roundButton
-                icon.source: roundButton.icon_played
+                icon.source: roundButton.iconPlayed
             }
         },
-
         State
         {
             name: "paused"
-            PropertyChanges {
+            PropertyChanges
+            {
                 target: roundButton
-                icon.source: roundButton.icon_paused
+                icon.source: roundButton.iconPaused
             }
         }
     ]
 
-    onCheckedChanged:
+    onClicked:
     {
-        state = state === "played" ? "paused" : "played"
+        state = (state === "played") ? ("paused") : ("played")
     }
 }
