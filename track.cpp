@@ -2,12 +2,12 @@
 
 Track::Track(QString name, QString title, QString author, QString path,QList<Tag> tags) :
     name(name), title(title), author(author), path(path), tags(tags)
-{  }
+{
+}
 
 Track::Track(QString name, QString title, QString author, QString path) :
     name(name), title(title), author(author), path(path)
 {
-
 }
 
 void Track::addNewTag(Tag tag)

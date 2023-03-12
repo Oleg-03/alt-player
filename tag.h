@@ -1,5 +1,6 @@
 #ifndef TAG_H
 #define TAG_H
+
 #include <QString>
 
 class Tag

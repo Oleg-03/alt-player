@@ -3,7 +3,6 @@ QT += quick sql core
 SOURCES += \
         main.cpp \
         playlistDb.cpp \
-        track.cpp \
         playlist.cpp \
         track.cpp
 
@@ -30,6 +29,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     playlistDb.h \
     tag.h \
-    track.h \
     playlist.h \
     track.h

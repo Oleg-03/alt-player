@@ -1,7 +1,9 @@
 #ifndef TRACK_H
 #define TRACK_H
+
 #include <QString>
 #include <QList>
+
 #include "tag.h"
 
 class Track
