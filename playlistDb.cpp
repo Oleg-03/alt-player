@@ -181,4 +181,46 @@ void PlaylistDb::addTag(Tag tag)
     close();
 }
 
+bool PlaylistDb::isTrackExists(int id)
+{
+    open();
+    query = new QSqlQuery;
+
+    query->prepare(R"(
+        SELECT COUNT(*)
+          FROM Trackes
+          WHERE track_id = :id;
+    )");
+
+    query->bindValue(":id", id);
+
+    query->exec();
+    query->next();
+    int count = query->value(0).toInt();
+    close();
+
+    return count > 0? true : false;
+}
+
+bool PlaylistDb::isTagExists(QString name)
+{
+    open();
+    query = new QSqlQuery;
+
+    query->prepare(R"(
+        SELECT COUNT(*)
+          FROM Tags
+          WHERE tag_name = :name;
+    )");
+
+    query->bindValue(":name", name);
+
+    query->exec();
+    query->next();
+    int count = query->value(0).toInt();
+    close();
+
+    return count > 0? true : false;
+}
+
 

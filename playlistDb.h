@@ -23,6 +23,8 @@ class PlaylistDb
         void addPlaylistInPlaylistDb(int);
         void addTrackDb(Track);
         void addTrackInPlaylistDb(int);
+        bool isTrackExists(int);
+        bool isTagExists();
 
 public:
         PlaylistDb();
