@@ -11,8 +11,6 @@ Button
 
     property int itemSize: 48
 
-    id: button
-
     height: itemSize
     width: itemSize
 

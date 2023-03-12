@@ -6,7 +6,7 @@ Image
     property int itemSize: 360
     property int radius: 14
 
-    id: image
+    id: root
     width: itemSize
     height: itemSize
 
@@ -17,13 +17,13 @@ Image
     {
         maskSource: Item
         {
-            width: image.width
-            height: image.height
+            width: root.width
+            height: root.height
 
             Rectangle
             {
                 anchors.fill: parent
-                radius: image.radius
+                radius: root.radius
             }
         }
     }

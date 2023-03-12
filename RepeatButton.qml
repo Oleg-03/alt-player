@@ -23,7 +23,7 @@ Button
 
     property int itemSize: 36
 
-    id: button
+    id: root
 
     height: itemSize
     width: itemSize
@@ -45,8 +45,8 @@ Button
             name: "inactive"
             PropertyChanges
             {
-                target: button
-                icon.source: button.iconInactive
+                target: root
+                icon.source: root.iconInactive
             }
         },
         State
@@ -54,8 +54,8 @@ Button
             name: "playlist"
             PropertyChanges
             {
-                target: button
-                icon.source: button.iconPlaylist
+                target: root
+                icon.source: root.iconPlaylist
             }
         },
         State
@@ -63,8 +63,8 @@ Button
             name: "once"
             PropertyChanges
             {
-                target: button
-                icon.source: button.iconOnce
+                target: root
+                icon.source: root.iconOnce
             }
         }
     ]

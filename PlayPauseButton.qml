@@ -17,7 +17,7 @@ RoundButton
 
     property int itemSize: 60
 
-    id: roundButton
+    id: root
 
     height: itemSize
     width: itemSize
@@ -43,8 +43,8 @@ RoundButton
             name: "played"
             PropertyChanges
             {
-                target: roundButton
-                icon.source: roundButton.iconPlayed
+                target: root
+                icon.source: root.iconPlayed
             }
         },
         State
@@ -52,8 +52,8 @@ RoundButton
             name: "paused"
             PropertyChanges
             {
-                target: roundButton
-                icon.source: roundButton.iconPaused
+                target: root
+                icon.source: root.iconPaused
             }
         }
     ]

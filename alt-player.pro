@@ -1,4 +1,4 @@
-QT += quick sql core
+QT += quick sql core multimedia
 
 SOURCES += \
     main.cpp \

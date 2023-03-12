@@ -7,4 +7,3 @@ PlayPauseButton
     itemSize: 36
     radius: itemSize / 2
 }
-

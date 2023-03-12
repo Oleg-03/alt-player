@@ -17,7 +17,7 @@ Button
 
     property int itemSize: 36
 
-    id: button
+    id: root
 
     height: itemSize
     width: itemSize
@@ -39,8 +39,8 @@ Button
             name: "active"
             PropertyChanges
             {
-                target: button
-                icon.source: button.iconActive
+                target: root
+                icon.source: root.iconActive
             }
         },
         State
@@ -48,8 +48,8 @@ Button
             name: "inactive"
             PropertyChanges
             {
-                target: button
-                icon.source: button.iconInactive
+                target: root
+                icon.source: root.iconInactive
             }
         }
     ]

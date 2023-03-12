@@ -9,4 +9,5 @@ Window
 
     color: themeColor.surface
 
+    NavBar{}
 }

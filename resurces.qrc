@@ -12,5 +12,7 @@
         <file>PrevSongButton.qml</file>
         <file>MiniPlayPauseButton.qml</file>
         <file>MiniSongCover.qml</file>
+        <file>NavBar.qml</file>
+        <file>NavBarButton.qml</file>
     </qresource>
 </RCC>
