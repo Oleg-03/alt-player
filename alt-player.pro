@@ -5,8 +5,7 @@ SOURCES += \
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
-RESOURCES += resources \
-    conf.qrc
+RESOURCES += resources
 
 TRANSLATIONS += \
     alt-player_uk_UA.ts
