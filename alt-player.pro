@@ -4,12 +4,12 @@ SOURCES += \
         main.cpp \
         playlistDb.cpp \
         track.cpp \
-        playlist.cpp
+        playlist.cpp \
+        track.cpp
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
-RESOURCES += resources \
-    conf.qrc
+RESOURCES += resources
 
 TRANSLATIONS += \
     alt-player_uk_UA.ts
@@ -31,4 +31,5 @@ HEADERS += \
     playlistDb.h \
     tag.h \
     track.h \
-    playlist.h
+    playlist.h \
+    track.h
