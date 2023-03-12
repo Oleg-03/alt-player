@@ -1,6 +1,7 @@
 QT += quick sql core
 
 SOURCES += \
+        main.cpp \
         theme.cpp
 
 resources.files = main.qml 
