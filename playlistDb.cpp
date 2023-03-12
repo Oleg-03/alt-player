@@ -2,7 +2,7 @@
 
 PlaylistDb::PlaylistDb()
 {
-    this->path = "..\\alt-player\\Db_tyt\\dbdbdb.db";
+    this->path = "..\\alt-player\\databases\\database.db";
 }
 
 PlaylistDb::~PlaylistDb()
