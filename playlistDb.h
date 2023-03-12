@@ -29,8 +29,8 @@ public:
         ~PlaylistDb();
         void addPlaylistInPlaylist(int,Playlist);
         void addTrackInPlaylist(int,Track);
-//          void addTrack(int,Track);
-//          void addTag(int,Tag);
+        void addTrack(Track);
+        void addTag(Tag);
 //        bool updatePlaylistInPlaylist(PlaylistInPlaylist);
 //        bool updatePlaylist(Playlist);
 //        bool updateTrackInPlaylist(TrackInPlaylist);

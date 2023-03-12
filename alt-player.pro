@@ -5,6 +5,7 @@ SOURCES += \
         main.cpp \
         playlistDb.cpp \
         playlist.cpp \
+        tag.cpp \
         track.cpp
 
 resources.files = main.qml 

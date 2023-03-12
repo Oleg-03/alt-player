@@ -10,8 +10,8 @@ class Tag
         QString tag_color;
     public:
         Tag(QString,QString);
-        QString getName(QString);
-        QString getColor(QString);
+        QString getName();
+        QString getColor();
 };
 
 #endif // TAG_H

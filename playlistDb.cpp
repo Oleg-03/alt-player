@@ -155,4 +155,30 @@ void PlaylistDb::addTrackInPlaylist(int parent_id, Track child_track)
 
 }
 
+void PlaylistDb::addTrack(Track track)
+{
+    // додає трек в вершину фолдерової системи
+    addTrackInPlaylist(1, track);
+}
+
+void PlaylistDb::addTag(Tag tag)
+{
+    open();
+    query = new QSqlQuery;
+
+    query->prepare(R"(
+        INSERT INTO Tags (
+            tag_name,
+            tag_color
+        )
+        VALUES (:n, :c);
+    )");
+
+    query->bindValue(":n", tag.getName());
+    query->bindValue(":c", tag.getColor());
+
+    query->exec();
+    close();
+}
+
 
