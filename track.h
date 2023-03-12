@@ -9,16 +9,18 @@
 class Track
 {
     private:
+        int id;
         QString name;
         QString title;
         QString author;
         QString path;
         QList<Tag> tags;
     public:
-        Track(QString,QString,QString,QString,QList<Tag>);
+        Track(int,QString,QString,QString,QString,QList<Tag>);
         Track(QString,QString,QString,QString);
         void addNewTag(Tag);
-        int getCount();
+        int getTagsCount();
+        int getId();
         QString getName();
         QString getTitle();
         QString getAuthor();

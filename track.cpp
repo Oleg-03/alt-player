@@ -1,7 +1,7 @@
 #include "track.h"
 
-Track::Track(QString name, QString title, QString author, QString path,QList<Tag> tags) :
-    name(name), title(title), author(author), path(path), tags(tags)
+Track::Track(int id, QString name, QString title, QString author, QString path,QList<Tag> tags) :
+    id(id), name(name), title(title), author(author), path(path), tags(tags)
 {
 }
 
@@ -15,9 +15,14 @@ void Track::addNewTag(Tag tag)
     this->tags.push_back(tag);
 }
 
-int Track::getCount()
+int Track::getTagsCount()
 {
     return this->tags.size();
+}
+
+int Track::getId()
+{
+    return this->id;
 }
 
 QString Track::getName()
