@@ -1,6 +1,7 @@
 QT += quick sql core
 
 SOURCES += \
+        database.cpp \
         main.cpp \
         playlistDb.cpp \
         playlist.cpp \
@@ -27,6 +28,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    database.h \
     playlistDb.h \
     tag.h \
     playlist.h \
