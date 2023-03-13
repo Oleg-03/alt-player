@@ -3,20 +3,20 @@
         <file>themes/dark-purple.json</file>
     </qresource>
     <qresource prefix="/">
-        <file>SongCover.qml</file>
-        <file>PlayPauseButton.qml</file>
         <file>main.qml</file>
-        <file>ShuffleButton.qml</file>
-        <file>RepeatButton.qml</file>
-        <file>NextSongButton.qml</file>
-        <file>PrevSongButton.qml</file>
-        <file>MiniPlayPauseButton.qml</file>
-        <file>MiniSongCover.qml</file>
-        <file>NavBar.qml</file>
-        <file>NavBarButton.qml</file>
-        <file>ScreenPlayer.qml</file>
-        <file>ScreenPlaylists.qml</file>
-        <file>ScreenSettings.qml</file>
+        <file>components/MiniPlayPauseButton.qml</file>
+        <file>components/MiniSongCover.qml</file>
+        <file>components/NavBar.qml</file>
+        <file>components/NavBarButton.qml</file>
+        <file>components/NextSongButton.qml</file>
+        <file>components/PlayPauseButton.qml</file>
+        <file>components/PrevSongButton.qml</file>
+        <file>components/RepeatButton.qml</file>
+        <file>components/ScreenPlayer.qml</file>
+        <file>components/ScreenPlaylists.qml</file>
+        <file>components/ScreenSettings.qml</file>
+        <file>components/ShuffleButton.qml</file>
+        <file>components/SongCover.qml</file>
     </qresource>
     <qresource prefix="/languages">
         <file>languages/uk_UA.json</file>

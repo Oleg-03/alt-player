@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 
+import "./components/"
+
 Window
 {
     width: 412
