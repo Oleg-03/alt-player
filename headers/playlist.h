@@ -4,8 +4,8 @@
 #include <QString>
 #include <QList>
 
-#include "track.h"
-#include "database.h"
+#include "headers/track.h"
+#include "headers/database.h"
 
 class Playlist
 {

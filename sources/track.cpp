@@ -1,4 +1,4 @@
-#include "track.h"
+#include "headers/track.h"
 
 Track::Track(int id, QString name, QString title, QString author, QString path,QList<Tag> tags) :
     id(id), name(name), title(title), author(author), path(path), tags(tags)

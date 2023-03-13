@@ -5,7 +5,7 @@
 #include <QList>
 #include <QString>
 
-#include "playlist.h"
+#include "headers/playlist.h"
 
 class PlaylistDb
 {

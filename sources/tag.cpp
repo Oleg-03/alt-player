@@ -1,4 +1,4 @@
-#include "tag.h"
+#include "headers/tag.h"
 
 Tag::Tag(QString tag_name, QString tag_color) : tag_name(tag_name), tag_color(tag_color)
 {

@@ -4,7 +4,7 @@
 #include <QString>
 #include <QList>
 
-#include "tag.h"
+#include "headers/tag.h"
 
 class Track
 {

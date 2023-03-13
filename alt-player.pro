@@ -1,21 +1,19 @@
-QT += quick sql core
+QT += quick sql core multimedia
+
+HEADERS += \
+    headers/database.h \
+    headers/playlistDb.h \
+    headers/tag.h \
+    headers/playlist.h \
+    headers/track.h
 
 SOURCES += \
-        database.cpp \
-        main.cpp \
-        playlistDb.cpp \
-        playlist.cpp \
-        tag.cpp \
-        track.cpp
-
-resources.files = main.qml 
-resources.prefix = /$${TARGET}
-RESOURCES += resources
-
-TRANSLATIONS += \
-    alt-player_uk_UA.ts
-CONFIG += lrelease
-CONFIG += embed_translations
+    main.cpp \
+    sources/database.cpp \
+    sources/playlistDb.cpp \
+    sources/playlist.cpp \
+    sources/tag.cpp \
+    sources/track.cpp
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -27,10 +25,3 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    database.h \
-    playlistDb.h \
-    tag.h \
-    playlist.h \
-    track.h

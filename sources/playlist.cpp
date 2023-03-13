@@ -1,4 +1,4 @@
-#include "playlist.h"
+#include "headers/playlist.h"
 
 // ctor for db
 Playlist::Playlist(int id, QString picture_path, QString name, QString creation, int count, QList<Playlist> child_playlists, QList<Track> trackes) :
