@@ -91,30 +91,7 @@ void PlaylistDb::addPlaylistInPlaylist(int parent_id, Playlist child_playlist)
     }
 }
 
-void PlaylistDb::addTrackDb(Track child_track)
-{
-    open();
-    query = new QSqlQuery();
-
-    query->prepare(R"(
-        INSERT INTO Trackes (
-            track_name,
-            title,
-            author,
-            file_path
-        )
-        VALUES (:n, :t, :a, :p);
-    )");
-    query->bindValue(":n", child_track.getName());
-    query->bindValue(":t", child_track.getTitle());
-    query->bindValue(":a", child_track.getAuthor());
-    query->bindValue(":p", child_track.getPath());
-
-    query->exec();
-    close();
-}
-
-void PlaylistDb::addTrackInPlaylistDb(int parent_id)
+void PlaylistDb::addTrackInPlaylistDb(int parent_id, int track_id)
 {
     open();
     query = new QSqlQuery();
@@ -124,61 +101,35 @@ void PlaylistDb::addTrackInPlaylistDb(int parent_id)
             fk_parent_playlist_id,
             fk_track_id
         )
-        VALUES (
-            :p,
-            (SELECT track_id
-              FROM Trackes
-              ORDER BY track_id
-              DESC LIMIT 1)
-        );
+        VALUES (:p, :t);
     )");
 
     query->bindValue(":p", parent_id);
+    query->bindValue(":t", track_id);
     query->exec();
     close();
 }
 
 void PlaylistDb::addTrackInPlaylist(int parent_id, Track child_track)
 {
-    addTrackDb(child_track);
 
-    addTrackInPlaylistDb(parent_id);
+    addTrackInPlaylistDb(parent_id, child_track_id);
 
     for (Playlist& item : playlists)
     {
         if (item.getId() == parent_id)
         {
             item.newTrack(child_track);
-        }
-
+            deleteTrackInPlaylist(parent_id, child_track);
+            return true;
+        }        
     }
-
+    return false;
 }
 
-void PlaylistDb::addTrack(Track track)
+void PlaylistDb::deleteTrackInPlaylist(int, Track)
 {
-    // додає трек в вершину фолдерової системи
-    addTrackInPlaylist(1, track);
-}
 
-void PlaylistDb::addTag(Tag tag)
-{
-    open();
-    query = new QSqlQuery;
-
-    query->prepare(R"(
-        INSERT INTO Tags (
-            tag_name,
-            tag_color
-        )
-        VALUES (:n, :c);
-    )");
-
-    query->bindValue(":n", tag.getName());
-    query->bindValue(":c", tag.getColor());
-
-    query->exec();
-    close();
 }
 
 bool PlaylistDb::isTrackExists(int id)
@@ -202,6 +153,36 @@ bool PlaylistDb::isTrackExists(int id)
     return count > 0? true : false;
 }
 
+void PlaylistDb::addTrack(Track track)
+{
+    if (!isTrackExists(track.getId()))
+    {
+        open();
+        query = new QSqlQuery();
+
+        query->prepare(R"(
+            INSERT INTO Trackes (
+                track_name,
+                title,
+                author,
+                file_path
+            )
+            VALUES (:n, :t, :a, :p);
+        )");
+        query->bindValue(":n", track.getName());
+        query->bindValue(":t", track.getTitle());
+        query->bindValue(":a", track.getAuthor());
+        query->bindValue(":p", track.getPath());
+
+        query->exec();
+        close();
+        addTrackInPlaylist(1, track);
+        return true;
+    }
+    else return false;
+
+}
+
 bool PlaylistDb::isTagExists(QString name)
 {
     open();
@@ -222,5 +203,34 @@ bool PlaylistDb::isTagExists(QString name)
 
     return count > 0? true : false;
 }
+
+bool PlaylistDb::addTag(Tag tag)
+{
+    if (!isTagExists(tag.getName()))
+    {
+        open();
+        query = new QSqlQuery;
+
+        query->prepare(R"(
+            INSERT INTO Tags (
+                tag_name,
+                tag_color
+            )
+            VALUES (:n, :c);
+        )");
+
+        query->bindValue(":n", tag.getName());
+        query->bindValue(":c", tag.getColor());
+
+        query->exec();
+        close();
+        return true;
+    }
+    else return false;
+}
+
+
+
+
 
 

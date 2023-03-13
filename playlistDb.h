@@ -21,18 +21,18 @@ class PlaylistDb
         void close();
         void addPlaylistDB(Playlist);
         void addPlaylistInPlaylistDb(int);
-        void addTrackDb(Track);
-        void addTrackInPlaylistDb(int);
+        void addTrackInPlaylistDb(int,int);
         bool isTrackExists(int);
-        bool isTagExists();
+        bool isTagExists(QString);
 
 public:
         PlaylistDb();
         ~PlaylistDb();
         void addPlaylistInPlaylist(int,Playlist);
         void addTrackInPlaylist(int,Track);
-        void addTrack(Track);
-        void addTag(Tag);
+        void deleteTrackInPlaylist(int,Track);
+        bool addTrack(Track);
+        bool addTag(Tag);
 //        bool updatePlaylistInPlaylist(PlaylistInPlaylist);
 //        bool updatePlaylist(Playlist);
 //        bool updateTrackInPlaylist(TrackInPlaylist);
