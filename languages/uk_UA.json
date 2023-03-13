@@ -1,0 +1,13 @@
+{
+    "code" : "uk_UA",
+    "name" : "Ukrainian",
+    "components" :
+    {
+        "navbar" :
+        {
+            "playerButton" : "Плеєр",
+            "playlistsButton" : "Плейлисти",
+            "settingsButton" : "Опції"
+        }
+    }
+}

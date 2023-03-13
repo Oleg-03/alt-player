@@ -1,17 +1,16 @@
-QT += quick sql core multimedia svg
+QT += quick sql core multimedia
+
+HEADERS += \
+    language.h \
+    theme.h
 
 SOURCES += \
+    language.cpp \
     main.cpp \
     theme.cpp
 
 RESOURCES += \
     resurces.qrc
-
-TRANSLATIONS += \
-    alt-player_uk_UA.ts
-CONFIG += \
-    lrelease \
-    embed_translations
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -23,6 +22,3 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    theme.h

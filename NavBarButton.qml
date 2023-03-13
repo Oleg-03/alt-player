@@ -69,9 +69,9 @@ Button
         {
             switch (root.buttonType)
             {
-            case "player":   return "Player"
-            case "playlists": return "Playlists"
-            case "settings":  return "Settings"
+            case "player":   return qsTr("Плеєр")
+            case "playlists": return qsTr("Плейлисти")
+            case "settings":  return qsTr("Опції")
             }
         }
 

@@ -18,4 +18,7 @@
         <file>ScreenPlaylists.qml</file>
         <file>ScreenSettings.qml</file>
     </qresource>
+    <qresource prefix="/languages">
+        <file>languages/uk_UA.json</file>
+    </qresource>
 </RCC>
