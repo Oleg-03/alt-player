@@ -4,8 +4,8 @@
 #include <QTranslator>
 #include <QQmlContext>
 
-#include "theme.h"
-#include "language.h"
+#include "headers/language.h"
+#include "headers/theme.h"
 
 int main(int argc, char *argv[])
 {
