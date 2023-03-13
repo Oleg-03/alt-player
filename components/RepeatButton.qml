@@ -30,8 +30,8 @@ Button
 
     state: "inactive"
 
-    icon.width: itemSize / 1.75
-    icon.height: itemSize / 1.75
+    icon.width: itemSize
+    icon.height: itemSize
 
     background: Rectangle
     {

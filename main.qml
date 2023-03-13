@@ -5,8 +5,12 @@ import "./components/"
 
 Window
 {
-    width: 412
-    height: 817
+//    maximumHeight: 817
+//    maximumWidth: 412
+
+    minimumWidth: 412
+    minimumHeight: 817
+
     visible: true
 
     color: themeColor.surface
@@ -21,7 +25,51 @@ Window
         anchors.top: parent.top
         anchors.bottom: navBar.top
 
-        color: "red"
+        color: themeColor.surface
+
+        SongCover
+        {
+            id: songCover
+            anchors.centerIn: parent
+            anchors.verticalCenterOffset: -107
+        }
+
+        Item
+        {
+            anchors.left: songCover.left
+            anchors.right: songCover.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: 282
+
+            PlayPauseButton
+            {
+                anchors.centerIn: parent
+            }
+
+            NextSongButton
+            {
+                anchors.centerIn: parent
+                anchors.horizontalCenterOffset: 79
+            }
+
+            PrevSongButton
+            {
+                anchors.centerIn: parent
+                anchors.horizontalCenterOffset: -79
+            }
+
+            ShuffleButton
+            {
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            RepeatButton
+            {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+            }
+        }
     }
 
     ScreenPlaylists
@@ -35,6 +83,8 @@ Window
         anchors.bottom: navBar.top
 
         color: "blue"
+
+
     }
 
     ScreenSettings
