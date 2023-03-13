@@ -1,22 +1,10 @@
 #ifndef THEME_H
 #define THEME_H
 
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonParseError>
-#include <QJsonValue>
-#include <QFile>
-#include <QString>
-#include <QVariantMap>
+#include "config.h"
 
-#include <stdexcept>
-
-class Theme
+class Theme : Config
 {
-private:
-    QFile file;
-    QJsonObject jsonObj;
-
 public:
     Theme(const QString path);
 

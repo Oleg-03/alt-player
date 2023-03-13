@@ -56,7 +56,7 @@ Button
         {
             switch (root.buttonType)
             {
-            case "player":   return iconPlayer
+            case "player":    return iconPlayer
             case "playlists": return iconPlaylists
             case "settings":  return iconSettings
             }
@@ -69,9 +69,9 @@ Button
         {
             switch (root.buttonType)
             {
-            case "player":   return qsTr("Плеєр")
-            case "playlists": return qsTr("Плейлисти")
-            case "settings":  return qsTr("Опції")
+            case "player":    return language.navbar.playerButton
+            case "playlists": return language.navbar.playlistsButton
+            case "settings":  return language.navbar.settingsButton
             }
         }
 

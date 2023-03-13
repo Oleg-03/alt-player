@@ -1,11 +1,16 @@
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
 
+#include "config.h"
 
-class Language
+class Language : Config
 {
 public:
-    Language();
+    Language(const QString path);
+
+    QString getName();
+    QString getCode();
+    QVariantMap getComponents();
 };
 
 #endif // LANGUAGE_H

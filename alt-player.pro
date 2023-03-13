@@ -1,10 +1,12 @@
 QT += quick sql core multimedia
 
 HEADERS += \
+    config.h \
     language.h \
     theme.h
 
 SOURCES += \
+    config.cpp \
     language.cpp \
     main.cpp \
     theme.cpp
