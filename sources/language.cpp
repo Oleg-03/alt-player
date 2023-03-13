@@ -1,4 +1,4 @@
-#include "language.h"
+#include "headers/language.h"
 
 Language::Language(const QString path) : Config(path) {}
 

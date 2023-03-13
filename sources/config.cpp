@@ -1,4 +1,4 @@
-#include "config.h"
+#include "headers/config.h"
 
 Config::Config(const QString path)
     : file(path)

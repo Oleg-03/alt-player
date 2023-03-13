@@ -1,4 +1,4 @@
-#include "theme.h"
+#include "headers/theme.h"
 
 Theme::Theme(const QString path) : Config(path) {}
 
