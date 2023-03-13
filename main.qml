@@ -27,6 +27,42 @@ Window
 
         color: themeColor.surface
 
+        TagBar
+        {
+            height: 30
+            width: songCover.width - 30
+
+            Component.onCompleted:
+            {
+                items.append({ "itemTitle": "Tag one", "itemColor": "red" })
+                items.append({ "itemTitle": "Tag two", "itemColor": "blue" })
+                items.append({ "itemTitle": "Tag three", "itemColor": "green" })
+                items.append({ "itemTitle": "Tag four", "itemColor": "pink" })
+            }
+
+            anchors.bottom: songCover.top
+            anchors.bottomMargin: 20
+
+            anchors.left: songCover.left
+            anchors.leftMargin: -24
+        }
+
+        Rectangle
+        {
+            width: 30
+            height: 30
+            color: "transparent"
+
+            border.color: themeColor.outline
+            border.width: 1
+            radius: 30
+
+            anchors.right: songCover.right
+
+            anchors.bottom: songCover.top
+            anchors.bottomMargin: 20
+        }
+
         SongCover
         {
             id: songCover
@@ -82,9 +118,7 @@ Window
         anchors.top: parent.top
         anchors.bottom: navBar.top
 
-        color: "blue"
-
-
+        color: themeColor.surface
     }
 
     ScreenSettings

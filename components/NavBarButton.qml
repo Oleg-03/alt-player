@@ -79,7 +79,7 @@ Button
         }
 
         font.family: "Roboto"
-        font.pixelSize: 14
+        font.pointSize: 11
         color: themeColor.on_surface_variant
 
         anchors.centerIn: parent

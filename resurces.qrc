@@ -17,6 +17,8 @@
         <file>components/ScreenSettings.qml</file>
         <file>components/ShuffleButton.qml</file>
         <file>components/SongCover.qml</file>
+        <file>components/Tag.qml</file>
+        <file>components/TagBar.qml</file>
     </qresource>
     <qresource prefix="/languages">
         <file>languages/uk_UA.json</file>
